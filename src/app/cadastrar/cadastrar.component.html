@@ -7,36 +7,36 @@
           <form>
             <div class="form-group">
               <label for="">Nome:</label>
-              <input type="text" class="form-control" placeholder="seu nome"/>
+              <input [(ngModel)]='user.nome' type="text" class="form-control" placeholder="seu nome" name="nome"/>
             </div>
             <div class="form-group">
               <label for="">E-mail:</label>
-              <input type="email" class="form-control" placeholder="email@email.com"/>
+              <input [(ngModel)]='user.usuario' type="email" class="form-control" placeholder="email@email.com" name="usuario"/>
             </div>
             <div class="form-group">
               <label for="">Senha:</label>
-              <input type="password" class="form-control" placeholder="********"/>
+              <input (input)='confirmarSenha($event)' type="password" class="form-control" placeholder="********" name="senha"/>
             </div>
             <div class="form-group">
               <label for="">Confirmar Senha:</label>
-              <input type="password" class="form-control" placeholder="********"/>
+              <input [(ngModel)]='user.senha' type="password" class="form-control" placeholder="********" name="confirmarSenha"/>
             </div>
             <div class="form-group">
               <label for="">Imagem:</label>
-              <input type="text" class="form-control" placeholder="url da imagem.jpg"/>
+              <input [(ngModel)]='user.foto' type="text" class="form-control" placeholder="url da imagem.jpg" name="foto"/>
             </div>
+
             <div class="form-group">
               <label for="">Tipo de Usuário:</label>
-              <select name="" id="" class="form-control">
-                <option value="" selected disabled>
-                  Selecione um tipo de usuário
-                </option>
-                <option value="">Padrão</option>
-                <option value="">Administrador</option>
+              <select name="tipoUsuario" class="form-control" (change)='tipoUser($event)'>
+                <option value="" selected disabled>Selecione um tipo de usuário</option>
+                <option value="padrao">Padrão</option>
+                <option value="adm">Administrador</option>
               </select>
             </div>
+
             <div class="d-flex justify-content-between">
-              <button class="btn btn-primary w-100">Cadastrar</button>
+              <button (click)='cadastrar()' class="btn btn-primary w-100" type="submit" name="cadastrar" >Cadastrar</button>
             </div>
             <p class="text-center h6 mt-2 mb-3">Já possui uma conta? <a routerLink="/entrar">Entrar.</a></p>
           </form>

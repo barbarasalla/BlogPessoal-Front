@@ -7,7 +7,7 @@
           <form>
             <div class="form-group">
               <label for="">Email:</label>
-              <input
+              <input [(ngModel)]='userLogin.usuario'
                 type="email"
                 class="form-control"
                 id="email"
@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
               <label for="">Senha:</label>
-              <input
+              <input [(ngModel)]='userLogin.senha'
                 type="password"
                 class="form-control"
                 id="senha"
@@ -32,7 +32,7 @@
               </div>
               <p><a href="">Esqueceu a senha?</a></p>
             </div>
-            <button class="mt-2 btn btn-primary px-4 d-block w-100">
+            <button class="mt-2 btn btn-primary px-4 d-block w-100" (click)="entrar()">
               Entrar
             </button>
           </form>
