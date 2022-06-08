@@ -11,8 +11,8 @@ export class Postagem{
         
         public data: Date;
 
-        public Usuario: User;
+        public usuario: User;
 
-        public tema: Tema;
+        public tema: Tema;       
     
 }

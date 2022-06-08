@@ -13,7 +13,7 @@
           <p class="m-0 font-weight-bold text-white">Olá, {{nome}}</p>
         </li>
         <li class="nav-item pl-3">
-            <a href="#"><p class="m-0"><i class="fa fa-pencil-square-o text-white" aria-hidden="true"></i></p></a>            
+            <a [routerLink]="['/user-edit', id]"><p class="m-0"><i class="fa fa-pencil-square-o text-white" aria-hidden="true"></i></p></a>            
         </li>
       </ul>
       <button class="btn btn-secondary my-2 my-sm-0 rounded-lg" type="button" (click)="sair()">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></button>      

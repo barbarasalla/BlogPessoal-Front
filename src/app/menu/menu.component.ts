@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
 
   nome = environment.nome
   foto = environment.foto
+  id = environment.id
 
   constructor(private router: Router) { }
 
@@ -18,12 +19,12 @@ export class MenuComponent implements OnInit {
   }
 
   sair(){
-    this.router.navigate(['/entrar'])
     environment.token=''
     environment.nome=''
     environment.foto=''
     environment.id=0
     environment.tipo=''
+    this.router.navigate(['/entrar'])
   }    
 
 }
