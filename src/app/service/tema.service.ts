@@ -16,23 +16,27 @@ export class TemaService {
   }
 
   getAllTema(): Observable<Tema[]> {
-    return this.http.get<Tema[]>('https://blogpessoal-bsm001.herokuapp.com/temas', this.token)
+    return this.http.get<Tema[]>('https://blogpessoal-bsalla.herokuapp.com/temas', this.token)
   }
 
   getById(id: number): Observable<Tema>{
-    return this.http.get<Tema>(`https://blogpessoal-bsm001.herokuapp.com/temas/${id}`, this.token)
+    return this.http.get<Tema>(`https://blogpessoal-bsalla.herokuapp.com/temas/${id}`, this.token)
+  }
+
+  getByNomeTema(descricao: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://blogpessoal-bsalla.herokuapp.com/temas/temas/${descricao}`, this.token)
   }
 
   postTema(tema: Tema): Observable<Tema> {
-    return this.http.post<Tema>('https://blogpessoal-bsm001.herokuapp.com/temas', tema, this.token)
+    return this.http.post<Tema>('https://blogpessoal-bsalla.herokuapp.com/temas', tema, this.token)
   }
 
   putTema(tema: Tema): Observable<Tema> {
-    return this.http.put<Tema>('https://blogpessoal-bsm001.herokuapp.com/temas', tema, this.token)
+    return this.http.put<Tema>('https://blogpessoal-bsalla.herokuapp.com/temas', tema, this.token)
   }
 
   deleteTema(id: number) {
-    return this.http.delete(`https://blogpessoal-bsm001.herokuapp.com/temas/${id}`, this.token)
+    return this.http.delete(`https://blogpessoal-bsalla.herokuapp.com/temas/${id}`, this.token)
   }
 }
 
